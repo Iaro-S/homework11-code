@@ -29,12 +29,4 @@ public class ReadStudentGradesFromFile {
 
         return new StudentGrade (name, discipline, grade);
     }
-
-    public static class ReadGradesFromFile {
-        public static void main(String[] args) throws Exception {
-
-            List<StudentGrade> students = readObjectsFromFile ();
-            students.forEach (System.out::println);
-        }
-    }
 }
