@@ -8,8 +8,8 @@ public class ClassroomMain {
                 List.of (
                         new StudentGrade ("Ealhstan Saira", "Computer Science", 10),
                         new StudentGrade ("Gasparo Sava", "Mathematics", 7),
-                        new StudentGrade ("Demetria Cosme", "Mathematics", 9),
-                        new StudentGrade ("Popa Cristina", "Mathematics", 8),
+                        new StudentGrade ("Demetria Cosme", "Mathematics", 5),
+                        new StudentGrade ("Popa Cristina", "Mathematics", 9),
                         new StudentGrade ("Majken Olgica", "Mathematics", 4),
                         new StudentGrade ("Majken Olgica", "History", 9),
                         new StudentGrade ("Miriana Rómulo", "Computer Science", 7),
@@ -21,7 +21,6 @@ public class ClassroomMain {
         System.out.println ("Max grade for discipline: " + classroom.getMaxDisciplineGrade ("Mathematics"));
         System.out.println ("Max grade: " + classroom.getMaxGrade ());
         System.out.println ("Average grade for discipline: " + classroom.getAverageGrade ("Mathematics"));
-        System.out.println ("Worst grade for discipline: " + classroom.getWorstGrade ("Mathematics"));
-
+        System.out.println ("Worst grade for discipline: " + classroom.getWorstGrade ("Physics"));
     }
 }

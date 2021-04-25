@@ -32,8 +32,13 @@ public class Classroom {
 
     public int getMaxDisciplineGrade(String discipline) {
         List<Integer> result = getGradesForDiscipline (discipline);
-
-        return Collections.max (result);
+        int max = result.get (0);
+        for (Integer grade : result) {
+            if (max < grade) {
+                max = grade;
+            }
+        }
+        return max;
     }
 
     public int getMaxGrade() {
@@ -57,7 +62,12 @@ public class Classroom {
 
     public int getWorstGrade(String discipline) {
         List<Integer> result = getGradesForDiscipline (discipline);
-
-        return Collections.min (result);
+        int worst = result.get (0);
+        for (Integer grade : result) {
+            if (worst > grade) {
+                worst = grade;
+            }
+        }
+        return worst;
     }
 }
