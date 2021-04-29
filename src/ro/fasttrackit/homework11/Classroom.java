@@ -33,6 +33,17 @@ public class Classroom {
         return result;
     }
 
+    public List<StudentGrade> getMax(String discipline) {
+        List<StudentGrade> result = new ArrayList<> ();
+        for (StudentGrade student : classroom) {
+            if (student.getDiscipline ().equals (discipline)) {
+                result.add (student);
+            }
+        }
+        return (result);
+        //return (Collections.max (result));
+    }
+
     public int getMaxDisciplineGrade(String discipline) {
         List<Integer> result = getGradesForDiscipline (discipline);
         int max = result.get (0);
@@ -43,6 +54,7 @@ public class Classroom {
         }
         return max;
     }
+
 
     public int getMaxGrade() {
         List<Integer> result = new ArrayList<> ();

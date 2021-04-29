@@ -9,11 +9,11 @@ Amilia Hilaria|Mathematics|9
 Marina Alimjan|Computer Science|5
 Duilio Marius|Physics|7
 Richa Ansgar|Mathematics|4
-Bennett Frieda|Mathematics|7
-Ermingard Tome|Physics|10
+Bennett Frieda|History|7
+Ermingard Tome|Physics|17
 Jannike Lucianv|Computer Science|3
 Neela Amaltheia|Physics|6
-Asim Jeltje|Computer Science|17
+Asim Jeltje|Computer Science|10
 Dulf Siguror|Mathematics|4
 Eilert Mechteld|Mathematics|6
 Storm Lital|Computer Science|9
