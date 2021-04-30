@@ -1,8 +1,6 @@
 package ro.fasttrackit.homework11;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Classroom {
     private final List<StudentGrade> classroom;
@@ -33,35 +31,36 @@ public class Classroom {
         return result;
     }
 
-    public List<StudentGrade> getMax(String discipline) {
+    public List<StudentGrade> getMaxGrade() {
         List<StudentGrade> result = new ArrayList<> ();
+        int max = 0;
         for (StudentGrade student : classroom) {
-            if (student.getDiscipline ().equals (discipline)) {
+            if (student.getGrade () > max) {
+                max = student.getGrade ();
+                result.clear ();
+                result.add (student);
+            } else if (student.getGrade () == max) {
                 result.add (student);
             }
         }
-        return (result);
-        //return (Collections.max (result));
+        return result;
     }
 
-    public int getMaxDisciplineGrade(String discipline) {
-        List<Integer> result = getGradesForDiscipline (discipline);
-        int max = result.get (0);
-        for (Integer grade : result) {
-            if (max < grade) {
-                max = grade;
+    public List<StudentGrade> getMaxDisciplineGrade(String discipline) {
+        List<StudentGrade> result = new ArrayList<> ();
+        int max = 0;
+        for (StudentGrade student : classroom) {
+            if (student.getDiscipline ().equals (discipline)) {
+                if (student.getGrade () > max) {
+                    max = student.getGrade ();
+                    result.clear ();
+                    result.add (student);
+                } else if (student.getGrade () == max) {
+                    result.add (student);
+                }
             }
         }
-        return max;
-    }
-
-
-    public int getMaxGrade() {
-        List<Integer> result = new ArrayList<> ();
-        for (StudentGrade student : classroom) {
-            result.add (student.getGrade ());
-        }
-        return Collections.max (result);
+        return result;
     }
 
     public int getAverageGrade(String discipline) {
@@ -75,14 +74,20 @@ public class Classroom {
         return sum / result.size ();
     }
 
-    public int getWorstGrade(String discipline) {
-        List<Integer> result = getGradesForDiscipline (discipline);
-        int worst = result.get (0);
-        for (Integer grade : result) {
-            if (worst > grade) {
-                worst = grade;
+    public List<StudentGrade> getWorstGrade(String discipline) {
+        List<StudentGrade> result = new ArrayList<> ();
+        int min = Integer.MAX_VALUE;
+        for (StudentGrade student : classroom) {
+            if (student.getDiscipline ().equals (discipline)) {
+                if (student.getGrade () < min) {
+                    min = student.getGrade ();
+                    result.clear ();
+                    result.add (student);
+                } else if (student.getGrade () == min) {
+                    result.add (student);
+                }
             }
         }
-        return worst;
+        return result;
     }
 }

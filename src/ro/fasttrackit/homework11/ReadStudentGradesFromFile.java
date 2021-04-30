@@ -3,16 +3,15 @@ package ro.fasttrackit.homework11;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ReadStudentGradesFromFile {
     public static void main(String[] args) throws Exception {
-        List<StudentGrade> students = readObjectsFromFile ();
+        ArrayList<StudentGrade> students = readObjectsFromFile ();
         students.forEach (System.out::println);
     }
 
-    private static List<StudentGrade> readObjectsFromFile() throws Exception {
-        List<StudentGrade> students = new ArrayList<> ();
+    public static ArrayList<StudentGrade> readObjectsFromFile() throws Exception {
+        ArrayList<StudentGrade> students = new ArrayList<> ();
         BufferedReader fileReader = new BufferedReader (new FileReader ("files/grades.txt"));
         String line;
         while ((line = fileReader.readLine ()) != null) {

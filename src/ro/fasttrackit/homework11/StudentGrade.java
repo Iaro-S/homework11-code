@@ -1,5 +1,7 @@
 package ro.fasttrackit.homework11;
 
+import java.util.Objects;
+
 public class StudentGrade {
     private final String name;
     private final String discipline;
@@ -23,6 +25,18 @@ public class StudentGrade {
         return grade;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass () != o.getClass ()) return false;
+        StudentGrade that = (StudentGrade) o;
+        return grade == that.grade && Objects.equals (name, that.name) && Objects.equals (discipline, that.discipline);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash (name, discipline, grade);
+    }
 
     @Override
     public String toString() {
@@ -32,5 +46,4 @@ public class StudentGrade {
                 ", grade=" + grade +
                 '}';
     }
-
 }
