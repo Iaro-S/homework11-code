@@ -7,10 +7,10 @@ public class ClassroomMain {
         Classroom classroom = new Classroom (readObjectsFromFile ());
         System.out.println ("Grades for selected discipline: " + classroom.getGradesForDiscipline ("Mathematics"));
 
-        System.out.println ("\n" + "Grade for student Majken Olgica: ");
+        System.out.println ("\n" + "Grade for selected student : ");
         classroom.getGradesForStudent ("Majken Olgica").forEach (System.out::println);
 
-        System.out.println ("\n" + "Max grade for discipline Computer Science: ");
+        System.out.println ("\n" + "Max grade for selected discipline: ");
         classroom.getMaxDisciplineGrade ("Computer Science").forEach (System.out::println);
 
         System.out.println ("\n" + "Max grade from student list: ");
